@@ -1,22 +1,30 @@
 {
-    "name":"THE CANS",
-    "description":"Can Party",
+    "name":"THE Beaut Can",
+    "description":"Can Party Beaut",
     "website":"https://google.com",
     "twitter":"https://duckduckgo.com/",
     "discord":"https://discord.com/",
     "rpc": "https://rpc.atlantic-2.seinetwork.io/",
     "network": "atlantic-2",
-    "collection_address":"sei1v83vptzhyyl9m7sfjvvzzx9eaksummprf9tfydaff07nx3utkacsvr5thv", 
-    "nft_name_type": "default",
+    "collection_address":"sei1m49qup54g7jpjar5tew07fsyvuqn276s6uzg3vy99frahllw34ns27d82r", 
+    "nft_name_type": "token_id",
     "groups":[
+        {
+            "name":"oglist",
+            "allowlist":[
+                "sei18a46sft8vxj5v3d2rczrvwh03yt5awx742a7jk"
+            ]
+        },
         {
             "name":"whitelist",
             "allowlist":[
-                "sei16yp779wr96h7yk5vnf24xagglewy7j79hqp795"
-            ] 
+                "sei18a46sft8vxj5v3d2rczrvwh03yt5awx742a7jk",
+                "sei1vcepwrthk0387s3s37ezfdgeqc3yxymstgjpal"
+            ]
         },
         {
             "name":"public"
         }
     ]
 }
+
