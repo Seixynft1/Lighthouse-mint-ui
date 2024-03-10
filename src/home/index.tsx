@@ -455,6 +455,31 @@ const Home = () => {
         }
     })
 
+    const Slideshow = () => {
+        const [currentIndex, setCurrentIndex] = useState(0);
+        const images = [
+            "images/launch0.jpeg",
+            "images/launch1.jpeg",
+            "images/launch2.jpeg",
+            "images/launch3.jpeg",
+            "images/launch4.jpeg",
+        ];
+      
+        useEffect(() => {
+          const intervalId = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+          }, 300); // Change slide every 1 second
+
+          return () => clearInterval(intervalId);
+        }, [currentIndex, images.length]);
+      
+        return (
+          <C.Image>
+            <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
+            </C.Image>
+        );
+      }
+
     const loadMinted = async () => {
         setLoading(true)
         setShowMintedNfts(true)
@@ -560,6 +585,10 @@ const Home = () => {
 
                                         <C.Description>{config.description}</C.Description>
 
+                                        <div>
+                                            <a href="images/Terms_of_sale_Seixy.pdf" download>Terms of Sale</a>
+                                        </div>
+
                                         {(config.website || config.twitter || config.discord) && (
                                             <C.Links>
                                                 {config.website &&
@@ -617,9 +646,7 @@ const Home = () => {
                                         <C.TitleMobile>
                                             {config.name}
                                         </C.TitleMobile>
-                                        <C.Image>
-                                            <img src="/images/launch.png" alt="launch" />
-                                        </C.Image>
+                                        <Slideshow />
                                         <C.MintInfo>
                                             <C.Price>
                                                 Price: <span>{new BigNumber(currentPhase.unit_price).div(1e6).times(amount).toString()} SEI</span>
